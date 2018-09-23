@@ -11,3 +11,13 @@ makeCodeButton.addEventListener('click', () => {
         printToDom(secretCode, "codeOutput")
     };
 });
+
+const translateCodeButton = document.getElementById("translateCodeButton");
+translateCodeButton.addEventListener('click', () => {
+    const translateValue = document.getElementById("inputCodeTranslate").value;
+    const translateCode = translateValue.split("");
+    for (let i = 0; i < translateCode.length; i++) {
+        const decodedValue = translateValue.fromCharCode(translateCode[i]);
+        printToDom(decodedValue, "translateOutput")
+    };
+});
